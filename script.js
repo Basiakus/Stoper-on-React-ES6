@@ -1,4 +1,9 @@
 class Stopwatch extends React.Component  {
+
+	static PropTypes: {
+    	display: React.PropTypes.object.isRequired,
+  	}
+
     constructor(display) {
     	super();
         this.running = false;
@@ -6,7 +11,7 @@ class Stopwatch extends React.Component  {
         this.reset();
         this.print(this.times);
     }
-
+  	
     reset() {
         this.times = {
             minutes: 0,
@@ -16,7 +21,7 @@ class Stopwatch extends React.Component  {
     }
 
 	print() {
-	        this.display.innerText = this.format(this.times);
+	        this.display = this.format(this.times);
 	}
 
 	format(times) {
