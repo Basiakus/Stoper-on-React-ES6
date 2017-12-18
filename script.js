@@ -1,8 +1,9 @@
 class Stopwatch extends React.Component  {
-
-
+	static defaultProps = {
+	    display: ''
+    }
 	static propTypes = {
-    display: React.PropTypes.number.isRequired
+    	display: React.PropTypes.string.isRequired
     }
 
     constructor(display) {
@@ -22,7 +23,7 @@ class Stopwatch extends React.Component  {
     }
 
 	print() {
-	        this.display.innerText = this.format(this.times);
+	        this.display.innerTEXT = this.format(this.times);
 	}
 
 	format(times) {
@@ -71,7 +72,7 @@ function pad0(value) {
 
 const startwatch = React.createElement(Stopwatch);
 ReactDOM.render(startwatch, document.getElementById('stopwatch'));
-//ReactDOM.render(React.createElement(Stopwatch, null), document.getElementById('stopwatch'));
+
 
 const startButton = document.getElementById('start');
 startButton.addEventListener('click', () => stopwatch.start());
